@@ -1,31 +1,26 @@
 # Chiboshi — Measurement Playground
 
-An educational playground for exploring everyday measurements through visual comparisons.
+**Estimate. Compare. Explain.** Build a sense of scale by connecting numbers and units with familiar objects.
 
-[中文说明](README.zh-CN.md) · [Getting started](docs/GETTING_STARTED.md) · [Learning guide](docs/LEARNING_GUIDE.md) · [Contributing](CONTRIBUTING.md)
+[Learning guide](docs/LEARNING_GUIDE.md) · [Run locally](#run-locally) · [Contribute](CONTRIBUTING.md) · [中文说明](README.zh-CN.md)
 
-Chiboshi (尺博士) explores a simple question: what does a measurement *look like*? Its activities connect numbers and units to familiar objects across **length, mass, capacity, area, volume, and time**. A deliberately implausible comparison can become a prompt to estimate, discuss, and revise an answer.
+![Chiboshi: Make measurement make sense — an independently maintained educational project](docs/media/cover.png)
 
-The project is independently maintained by [@734496335](https://github.com/734496335) as a local learning resource and a practical example of building educational interfaces with Next.js and TypeScript.
+## What if an ant were five metres long?
 
-![Chiboshi's English entry page with three measurement learning activities](docs/images/home.png)
+Start with a familiar reference, try a deliberately implausible estimate, and change **5 m** to **5 mm**. The numeral stays the same; the length becomes one thousandth as large.
 
-## What you can explore
+[![12-second recording: compare a five-metre ant, change the input to five millimetres, and inspect the new references](docs/media/preview.gif)](docs/media/README.md#watch)
 
-| Area | Purpose |
-| --- | --- |
-| Measurement sandbox | Explore quantities and compare scales across six measurement dimensions. |
-| Reference dictionary | Browse built-in examples that connect units to everyday objects. |
-| Creative workshop | Explore an experimental creation workflow; generated images require a separately configured image backend. |
-| Developer examples | Study unit conversion, visual comparison, React interaction, and server-side model integration. |
+*Real local interaction, with English annotations. The current classroom interface is Chinese. [Static preview](docs/media/video-poster.png) · [Transcript](docs/media/transcript.md)*
 
-The intended learning audience includes elementary-age learners with adult guidance. Developers and educators can also inspect, adapt, and discuss the implementation. The activities are exploratory; the project does not claim demonstrated learning outcomes or formal curriculum certification.
+### Watch the full walkthrough
 
-## Language and current scope
+[Watch the 47-second educational walkthrough](docs/media/README.md#watch)
 
-Project documentation and the main entry page use English. Many activities, reference entries, and model prompts remain in Chinese. Full interface localization is planned work; this is not yet an English-only classroom application.
+The walkthrough shows the reference library, an estimate and revision, capacity examples, and how to contribute. It has English explanations and no audio. The recording uses the real local fallback with **no API key**; it is not a demonstration of an AI model checking the answer.
 
-There is **no maintained hosted demo**. Run the project locally. Built-in pages and reference data can be explored without an API key. AI-dependent interactions require a configured backend; external providers require network access. Some visual assets or dependencies may also make network requests, so a fully offline experience is not guaranteed.
+[Caption file](docs/media/walkthrough.en.vtt) · [Teaching prompts and transcript](docs/media/transcript.md) · [Media kit and reproducible recording](docs/media/README.md)
 
 ## Run locally
 
@@ -38,25 +33,89 @@ npm ci
 npm run dev
 ```
 
-Open [http://127.0.0.1:3000](http://127.0.0.1:3000).
+Open [http://127.0.0.1:3000](http://127.0.0.1:3000). Start with the built-in reference dictionary.
 
-For optional AI features, copy `.env.local.example` to `.env.local` and configure `LLM_API_KEY`, `LLM_BASE_URL`, and `LLM_MODEL` for your provider. See [Getting started](docs/GETTING_STARTED.md) for setup, validation, and limitations. Never commit API credentials.
+There is **no maintained hosted demo**. Optional AI features need your own provider configuration; the image workshop also needs a separate image backend. See [Getting started](docs/GETTING_STARTED.md). Never commit credentials.
 
-## Learn and contribute
+## A small learning loop
 
-- [Learning guide](docs/LEARNING_GUIDE.md): short activities and implementation exercises.
-- [Architecture](docs/ARCHITECTURE.md): the main modules and request boundaries.
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 1. Find a reference
+
+[![Length dictionary with an approximate five-millimetre ant example](docs/media/01-reference.png)](docs/media/01-reference.png)
+
+Connect a quantity with something familiar. The dictionary's **approximately 5 mm ant** is a starting point for discussion.
+
+</td>
+<td width="50%" valign="top">
+
+### 2. Question an estimate
+
+[![A deliberately implausible five-metre ant compared with a car and bus](docs/media/02-estimate.png)](docs/media/02-estimate.png)
+
+Would a **5 m ant** make sense next to a car? Use the visual comparison to explain your reasoning.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 3. Revise and explain
+
+[![The input revised to five millimetres with new comparison objects](docs/media/03-revised.png)](docs/media/03-revised.png)
+
+Change **metres to millimetres**. Explain the thousandfold difference, then check a real measurement.
+
+</td>
+<td width="50%" valign="top">
+
+### 4. Transfer the idea
+
+[![Capacity dictionary with a bottle, milk carton, and kettle](docs/media/04-capacity.png)](docs/media/04-capacity.png)
+
+Explore another quantity: **550 mL, 1 L, 1.5 L**. Compare the examples with a labelled container nearby.
+
+</td>
+</tr>
+</table>
+
+Reference quantities are illustrative and often approximate. Actual objects vary. The activities invite estimation and discussion; the project does not claim demonstrated learning outcomes or formal curriculum certification.
+
+## What you can explore
+
+| Area | Learning or development opportunity |
+| --- | --- |
+| Measurement sandbox | Compare quantities across length, mass, capacity, area, volume, and time. |
+| Reference library | Browse built-in objects, units, and memory prompts. |
+| Creation Studio | Inspect an experimental image workflow with an optional local backend. |
+| Source code | Study unit conversion, visual comparison, React interaction, and server-side model integration. |
+
+The intended learning audience includes elementary-age learners with adult guidance. Educators and developers can inspect, adapt, and discuss the implementation.
+
+## Make the next lesson better
+
+Useful contributions include checking reference quantities, improving explanations, translating classroom activities, strengthening accessibility, and adding meaningful regression checks.
+
+- [Learning guide](docs/LEARNING_GUIDE.md): activities and implementation exercises.
+- [Contributing](CONTRIBUTING.md): development, validation, and review expectations.
 - [Roadmap](docs/ROADMAP.md): current limitations and future work.
-- [Contributing](CONTRIBUTING.md): changes, validation, and review expectations.
+- [Architecture](docs/ARCHITECTURE.md): modules and request boundaries.
 - [Maintainers](MAINTAINERS.md): stewardship and attribution.
-- [Security](SECURITY.md): local operation and responsible reporting.
+- [Security](SECURITY.md): local operation and sensitive reports.
 
-## Technology
+Chiboshi is independently maintained by [@734496335](https://github.com/734496335). It is an early educational source project, open to thoughtful contributions.
 
-Next.js 16 App Router, React 19, TypeScript, and Tailwind CSS form the application foundation. Framer Motion, Rough.js, and other visual libraries support the interface. Optional AI features use a server-side client for compatible chat-completion providers. Compatibility depends on the provider and model; it is not a guarantee that every API or model will work.
+## Language and technology
+
+Documentation and the main entry page use English. Many classroom activities, reference entries, and model prompts remain Chinese. Full interface localization is planned.
+
+The application uses Next.js 16, React 19, TypeScript, and Tailwind CSS, with visual libraries including Framer Motion and Rough.js. Optional AI features use compatible chat-completion APIs; provider and model compatibility varies. Some dynamic visual resources can make network requests, so fully offline operation is not guaranteed.
 
 ## Attribution and license
 
-Chiboshi developed from the Chinese-language 尺博士 prototype. AI-assisted coding and generated visual assets are part of its development history. Maintainer responsibility includes reviewing, testing, and documenting those outputs; AI assistance does not replace attribution or verification.
+Chiboshi developed from the Chinese-language 尺博士 prototype. AI-assisted coding and generated visual assets are part of its history. Maintainer responsibility includes reviewing, testing, and documenting those outputs.
 
-Project source code is available under the [MIT License](LICENSE). Third-party packages and assets retain their own terms; see [Third-party notices](THIRD_PARTY_NOTICES.md). A source-code license does not override those separate terms.
+Original project code is available under the [MIT License](LICENSE). Third-party fonts, icons, libraries, and other assets retain their own terms in [Third-party notices](THIRD_PARTY_NOTICES.md). The media uses actual local screen recordings; it does not represent classroom adoption or an online service.
