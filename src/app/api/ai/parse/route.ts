@@ -652,13 +652,13 @@ async function buildFallback(
     target_icon: fallbackTargetIcon,
     owl_tone:
       absurdity === "none"
-        ? "happy"
+        ? "thoughtful"
         : absurdity === "extreme" || absurdity === "high"
           ? "shocked"
           : "thoughtful",
     owl_quip:
       absurdity === "none"
-        ? `嗯，${object || "这个"}差不多就这么大呢～`
+        ? "先看看比例，再想想这个尺寸合理吗？"
         : // 方向用"相对日常带"判断，不要用 ratio（参考物没选到时 ratio 恒为 1
           //   会错判方向）。例：卡车 8 千米，没有 km 量级的卡车类参考 → ratio=1
           //   → 旧逻辑说"有这么小吗"，明显反了。
