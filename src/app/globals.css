@@ -1,0 +1,517 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════
+   猫啃什锦黑（Maoken Assorted Sans，OFL 许可，可商用）
+   定位：童趣卡通字体，用于标题/按钮等"display"场合
+   只引入 Lite 版（~6MB），覆盖 GB2312 常用字，足够首页/按钮文字
+   ═══════════════════════════════════════════════════════════ */
+@font-face {
+  font-family: "Maoken Assorted Sans";
+  /* woff2 是浏览器原生格式，OTS 处理最干净；OTF/TTF 作 fallback */
+  src: url("/fonts/maoken/MaokenAssortedSans-Lite.woff2") format("woff2"),
+       url("/fonts/maoken/MaokenAssortedSans-Lite.otf") format("opentype"),
+       url("/fonts/maoken/MaokenAssortedSans-Lite.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/* 第二条规则：把字体文件内部真实名也注册为可用 family，
+   即使浏览器对 alias 做了校验也能命中 */
+@font-face {
+  font-family: "MaokenAssortedSans-Lite";
+  src: url("/fonts/maoken/MaokenAssortedSans-Lite.woff2") format("woff2"),
+       url("/fonts/maoken/MaokenAssortedSans-Lite.otf") format("opentype"),
+       url("/fonts/maoken/MaokenAssortedSans-Lite.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   尺博士 — 设计 Token
+   结构：Duolingo 3D 实体阴影  ·  色板：暖米色系
+   ═══════════════════════════════════════════════════════════ */
+:root {
+  /* —— 中性 —— */
+  --background:  #FFF8E7;     /* 页面背景：暖奶油（更鲜活） */
+  --card-bg:     #FFFFFF;     /* 卡片底：纯白 */
+  --stage-bg:    #FFF1CF;     /* 舞台暖橙底 */
+  --foreground:  #4A3520;     /* 主文字 = 深棕（同描边） */
+  --ink-mute:    rgba(74, 53, 32, 0.55);
+  --ink-soft:    rgba(74, 53, 32, 0.78);
+
+  --grey-100: #FAF7F0;
+  --grey-200: #ECE6D8;
+  --grey-300: #D9D0BC;
+  --grey-400: #A89E89;
+
+  /* —— 描边 —— */
+  --outline:     #4A3520;
+  --outline-w:   2px;
+
+  /* —— 品牌语义色（每个含 base + dark）——
+     dark 用于 3D 按钮的底边 */
+  --primary:        #4A90D9;
+  --primary-dark:   #3A78B8;
+
+  --secondary:      #FF9F43;
+  --secondary-dark: #E07F25;
+
+  --success:        #58CC02;   /* 借用 Duolingo 绿专门用于答对仪式 */
+  --success-dark:   #46A302;
+
+  --danger:         #FF5B5B;
+  --danger-dark:    #D84545;
+
+  --warning:        #FFC93C;
+  --warning-dark:   #D9A721;
+
+  --tertiary:       #B57BFF;
+  --tertiary-dark:  #9159E0;
+
+  --teal:           #2EC4B6;
+  --teal-dark:      #1FA398;
+
+  /* —— 维度色 —— */
+  --dim-length: var(--primary);
+  --dim-weight: var(--secondary);
+  --dim-volume: var(--teal);
+  --dim-area:   var(--tertiary);
+  --dim-3d:     var(--danger);
+  --dim-time:   var(--warning);
+
+  /* —— 圆角 —— */
+  --r-xs:  8px;
+  --r-sm:  12px;
+  --r-md:  16px;
+  --r-lg:  20px;
+  --r-xl:  24px;
+  --r-2xl: 32px;
+  --r-pill: 9999px;
+
+  /* Bundled display lettering and system text avoid font downloads. */
+  --font-maoken: "Maoken Assorted Sans", "MaokenAssortedSans-Lite";
+  --font-sans-cn: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC",
+                  system-ui, sans-serif;
+  --font-display-cn: var(--font-maoken), var(--font-sans-cn);
+  --font-display-en: ui-rounded, "Arial Rounded MT Bold", "Trebuchet MS",
+                     system-ui, sans-serif;
+  --font-display: var(--font-maoken), var(--font-display-en),
+                  var(--font-sans-cn);
+  --font-body: system-ui, -apple-system, "Segoe UI", var(--font-sans-cn);
+  /* Compatibility aliases for existing component styles. */
+  --font-fredoka: var(--font-display);
+  --font-lexend: var(--font-body);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-outline: var(--outline);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-secondary-dark: var(--secondary-dark);
+  --color-success: var(--success);
+  --color-success-dark: var(--success-dark);
+  --color-danger: var(--danger);
+  --color-danger-dark: var(--danger-dark);
+  --color-warning: var(--warning);
+  --color-warning-dark: var(--warning-dark);
+  --color-tertiary: var(--tertiary);
+  --color-card: var(--card-bg);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+html, body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+/* 标题统一用童趣字体（仅大号标题用，避免字重问题）
+   ─── 关键：Maoken Lite 只有 normal 一种字重，任何 fontWeight>400 都会触发
+   浏览器伪粗体（faux-bold），把中文笔画硬涂厚一遍，视觉上"糊一团"。
+   所以这里同时做两件事：
+     1) 默认字重 = 300（视觉上更纤细，配合 Maoken 实际渲染的 400 笔画）
+     2) font-synthesis: weight none —— 让任何下游的 fontWeight: 600/800/900
+        都 *不再* 被合成伪粗体。下游想强调，应该改字号 / 颜色 / 字距，
+        而不是堆字重。 */
+h1, h2, .font-display {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-synthesis: none;          /* 标准属性：禁止伪粗体/伪斜体合成 */
+  font-synthesis-weight: none;   /* 现代浏览器细粒度控制 */
+  -webkit-font-synthesis: none;  /* Safari 兼容 */
+  letter-spacing: 0.01em;
+}
+h3, h4 {
+  font-family: var(--font-body);
+  font-weight: 900;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   组件原语
+   ═══════════════════════════════════════════════════════════ */
+
+/* —— Duolingo 风格 3D 卡片 ——
+   特征：浅边 2px + 同色加深 4px 实底（不是阴影） */
+.duo-card {
+  background: var(--card-bg);
+  border: 2px solid var(--grey-200);
+  border-bottom-width: 4px;
+  border-radius: var(--r-xl);
+}
+
+/* 旧名兼容 */
+.cartoon-card {
+  background: var(--card-bg);
+  border: 2px solid var(--grey-200);
+  border-bottom-width: 4px;
+  border-radius: var(--r-xl);
+}
+
+/* 暖色舞台 */
+.cartoon-stage {
+  background: var(--stage-bg);
+  border: 2px solid var(--grey-200);
+  border-bottom-width: 4px;
+  border-radius: var(--r-xl);
+  position: relative;
+  overflow: hidden;
+}
+.cartoon-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 255, 255, 0.6) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* —— Duolingo 风格 3D 按钮 ——
+   特征：实色填充 + 同色加深底边 4px（不是阴影）+ 按下下沉 4px */
+.duo-btn {
+  --btn-bg: #fff;
+  --btn-bottom: var(--grey-300);
+  --btn-text: var(--foreground);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-family: var(--font-body);
+  font-weight: 900;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  color: var(--btn-text);
+  background: var(--btn-bg);
+  border: 2px solid var(--btn-bottom);
+  border-bottom-width: 4px;
+  border-radius: var(--r-md);
+  cursor: pointer;
+  user-select: none;
+  transition: transform 80ms ease, border-bottom-width 80ms ease, filter 100ms ease;
+}
+.duo-btn:hover { filter: brightness(1.04); }
+.duo-btn:active {
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+  filter: brightness(0.98);
+}
+.duo-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none !important;
+  border-bottom-width: 4px !important;
+  filter: none;
+}
+
+/* 按钮变体 */
+.duo-btn.primary   { --btn-bg: var(--primary);   --btn-bottom: var(--primary-dark);   --btn-text: #fff; }
+.duo-btn.success   { --btn-bg: var(--success);   --btn-bottom: var(--success-dark);   --btn-text: #fff; }
+.duo-btn.danger    { --btn-bg: var(--danger);    --btn-bottom: var(--danger-dark);    --btn-text: #fff; }
+.duo-btn.secondary { --btn-bg: var(--secondary); --btn-bottom: var(--secondary-dark); --btn-text: #fff; }
+.duo-btn.warning   { --btn-bg: var(--warning);   --btn-bottom: var(--warning-dark);   --btn-text: var(--foreground); }
+.duo-btn.ghost     { --btn-bg: #fff; --btn-bottom: var(--grey-300); --btn-text: var(--foreground); }
+.duo-btn.lg { padding: 16px 28px; font-size: 18px; border-radius: var(--r-lg); }
+.duo-btn.xl { padding: 18px 32px; font-size: 20px; border-radius: var(--r-lg); }
+.duo-btn.sm { padding: 8px 14px; font-size: 13px; border-radius: var(--r-sm); }
+.duo-btn.icon { padding: 10px; min-width: 44px; }
+
+/* —— Outline 变体（白底彩字彩边）—— */
+.duo-btn.primary-outline   { --btn-bg: #fff; --btn-bottom: var(--grey-300); --btn-text: var(--primary-dark); }
+.duo-btn.success-outline   { --btn-bg: #fff; --btn-bottom: var(--grey-300); --btn-text: var(--success-dark); }
+.duo-btn.danger-outline    { --btn-bg: #fff; --btn-bottom: var(--grey-300); --btn-text: var(--danger-dark); }
+.duo-btn.secondary-outline { --btn-bg: #fff; --btn-bottom: var(--grey-300); --btn-text: var(--secondary-dark); }
+
+/* —— Locked 变体（被锁住的技能节点） —— */
+.duo-btn.locked {
+  --btn-bg: var(--grey-200);
+  --btn-bottom: var(--grey-400);
+  --btn-text: var(--ink-mute);
+  cursor: not-allowed;
+}
+.duo-btn.locked:hover { filter: none; }
+.duo-btn.locked:active { transform: none; border-bottom-width: 4px; }
+
+/* —— Uppercase 选项 (Duolingo 大写字体)，仅用于 EN 标签 —— */
+.duo-btn-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BottomBar (闯关页底部反馈条) —— 状态染色 + 主按钮
+   ═══════════════════════════════════════════════════════════ */
+.bottom-bar {
+  position: relative;
+  width: 100%;
+  border-top: 2px solid var(--grey-200);
+  background: #fff;
+  transition: background 240ms ease, border-color 240ms ease;
+}
+.bottom-bar.correct {
+  background: color-mix(in srgb, var(--success) 14%, #fff);
+  border-top-color: transparent;
+}
+.bottom-bar.wrong {
+  background: color-mix(in srgb, var(--danger) 14%, #fff);
+  border-top-color: transparent;
+}
+.bottom-bar-status {
+  font-family: var(--font-body);
+  font-weight: 900;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.bottom-bar-status.correct { color: var(--success-dark); }
+.bottom-bar-status.wrong   { color: var(--danger-dark); }
+
+/* 旧名兼容 */
+.cartoon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--foreground);
+  background: #fff;
+  border: 2px solid var(--grey-300);
+  border-bottom-width: 4px;
+  border-radius: var(--r-md);
+  cursor: pointer;
+  user-select: none;
+  transition: transform 80ms ease, border-bottom-width 80ms ease;
+}
+.cartoon-btn:active { transform: translateY(2px); border-bottom-width: 2px; }
+
+/* —— 选项 Tile （取代滑块的 Duolingo 答题 Tile）—— */
+.duo-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 14px 10px;
+  min-height: 76px;
+  background: #fff;
+  border: 2px solid var(--grey-200);
+  border-bottom-width: 4px;
+  border-radius: var(--r-md);
+  font-family: var(--font-body);
+  font-weight: 900;
+  font-size: 18px;
+  color: var(--foreground);
+  cursor: pointer;
+  user-select: none;
+  transition: all 100ms ease;
+  text-align: center;
+}
+.duo-tile:hover {
+  background: var(--grey-100);
+  transform: translateY(-1px);
+}
+.duo-tile:active { transform: translateY(2px); border-bottom-width: 2px; }
+
+.duo-tile.selected {
+  background: color-mix(in srgb, var(--primary) 12%, #fff);
+  border-color: var(--primary);
+  color: var(--primary-dark);
+}
+.duo-tile.correct {
+  background: color-mix(in srgb, var(--success) 14%, #fff);
+  border-color: var(--success);
+  color: var(--success-dark);
+}
+.duo-tile.wrong {
+  background: color-mix(in srgb, var(--danger) 14%, #fff);
+  border-color: var(--danger);
+  color: var(--danger-dark);
+}
+
+/* —— 状态徽章 —— */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 2px solid var(--outline);
+  border-bottom-width: 3px;
+  border-radius: var(--r-pill);
+  font-family: var(--font-body);
+  font-weight: 900;
+  font-size: 14px;
+  background: #fff;
+  color: var(--foreground);
+}
+
+/* —— 心形（生命） —— */
+.heart {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.heart.full   { color: var(--danger); }
+.heart.empty  { color: var(--grey-300); }
+
+/* —— 气泡对话框（Duolingo 风格：浅边 + 加粗底边） —— */
+.speech-bubble {
+  position: relative;
+  background: #fff;
+  border: 2px solid var(--grey-200);
+  border-bottom-width: 4px;
+  border-radius: 16px;
+  padding: 14px 18px;
+  font-weight: 600;
+  color: var(--foreground);
+}
+/* 尾巴朝左（猫头鹰在左） */
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  left: -14px;
+  bottom: 22px;
+  width: 0; height: 0;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-right: 14px solid var(--grey-200);
+}
+.speech-bubble::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  bottom: 25px;
+  width: 0; height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 11px solid #fff;
+  z-index: 1;
+}
+/* 尾巴朝右（猫头鹰在右） */
+.speech-bubble.right::after {
+  left: auto;
+  right: -14px;
+  border-right: none;
+  border-left: 14px solid var(--grey-200);
+}
+.speech-bubble.right::before {
+  left: auto;
+  right: -10px;
+  border-right: none;
+  border-left: 11px solid #fff;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   动画 keyframes
+   ═══════════════════════════════════════════════════════════ */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+@keyframes pop-in {
+  0%   { transform: scale(0.6); opacity: 0; }
+  60%  { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); }
+}
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+.anim-shake   { animation: shake 0.45s ease both; }
+.anim-pop-in  { animation: pop-in 0.4s cubic-bezier(.34,1.56,.64,1) both; }
+.anim-float   { animation: float-y 2.4s ease-in-out infinite; }
+
+/* ─────────────────────────────────────────────────────────────
+   首页模式卡
+   ‑ .mode-card-base 提供静态时的 soft shadow（base）
+   ‑ .mode-card-hoverable:hover 用 --card-tone（卡片主题色 CSS 变量）做发光
+   重要：base shadow 必须放 CSS，而不是 inline style.boxShadow，
+        否则 inline 样式优先级高于 :hover 规则，hover 永远盖不掉。
+   ───────────────────────────────────────────────────────────── */
+.mode-card-base {
+  box-shadow:
+    0 18px 40px -18px rgba(74, 53, 32, 0.18),
+    inset 0 2px 0 rgba(255, 255, 255, 0.7);
+}
+.mode-card-hoverable {
+  transition: box-shadow 0.35s ease, transform 0.3s ease;
+}
+.mode-card-hoverable:hover {
+  /* 双层阴影：外圈发光（用 tone color） + 内圈保留原 soft shadow 的深度感 */
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--card-tone) 45%, transparent),
+    0 0 39px 4px color-mix(in srgb, var(--card-tone) 55%, transparent),
+    0 22px 44px -16px rgba(74, 53, 32, 0.25),
+    inset 0 2px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   维度 tab chip——句子里的"填空"
+   ‑ is-active：当前激活，颜色已在 inline style 里给足，CSS 只补 hover 抬升
+   ‑ is-idle  ：未激活，灰边浅文字；hover 时立刻"穿"上 --chip-color
+   ‑ is-locked：未开放（available=false），不可点
+   关键：inline style 里设了 --chip-color 让 hover 知道用哪个维度色。
+   ───────────────────────────────────────────────────────────── */
+.dim-chip {
+  cursor: pointer;
+}
+.dim-chip.is-active {
+  cursor: default;
+  transform: translateY(-1px);
+}
+.dim-chip.is-idle:hover {
+  background: color-mix(in srgb, var(--chip-color, var(--dim-length)) 12%, #fff) !important;
+  border-color: var(--chip-color, var(--dim-length)) !important;
+  color: var(--chip-color, var(--dim-length)) !important;
+  opacity: 1 !important;
+  transform: translateY(-2px);
+}
+.dim-chip.is-locked {
+  opacity: 0.45 !important;
+  cursor: not-allowed;
+}
+
+/* —— 工具类 —— */
+.no-select { user-select: none; -webkit-user-select: none; }
+.no-underline { text-decoration: none; }
+.emoji-cartoon { /* 已弃用，保留为空兼容 */ }
+
+/* —— 容积模式：液体波浪动画 ——
+   两个不规则圆形 blob 持续旋转，借助 overflow:hidden 父容器在水位线
+   形成轻微起伏的波浪。两个 blob 错相 + 反向旋转 → 视觉上更"晃"。 */
+@keyframes liquid-wave {
+  0%   { transform: translateX(-25%) rotate(0deg); }
+  100% { transform: translateX(-25%) rotate(360deg); }
+}
+

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="26" viewBox="0 0 18 26" shape-rendering="crispEdges">
+  <!-- 建筑主体 -->
+  <rect x="3" y="4" width="12" height="18" fill="#F4D9B3"/>
+  <!-- 屋顶 -->
+  <rect x="2" y="2" width="14" height="2" fill="#C85A3A"/>
+  <!-- 顶层装饰线 -->
+  <rect x="3" y="4" width="12" height="1" fill="#E08A6E"/>
+  <!-- 每层楼板线 -->
+  <rect x="3" y="8" width="12" height="1" fill="#E08A6E"/>
+  <rect x="3" y="12" width="12" height="1" fill="#E08A6E"/>
+  <rect x="3" y="16" width="12" height="1" fill="#E08A6E"/>
+  <rect x="3" y="20" width="12" height="1" fill="#E08A6E"/>
+  <!-- 第5层窗户 -->
+  <rect x="5" y="5" width="2" height="2" fill="#4A7FAD"/>
+  <rect x="11" y="5" width="2" height="2" fill="#4A7FAD"/>
+  <!-- 第4层窗户 -->
+  <rect x="5" y="9" width="2" height="2" fill="#4A7FAD"/>
+  <rect x="11" y="9" width="2" height="2" fill="#4A7FAD"/>
+  <!-- 第3层窗户 -->
+  <rect x="5" y="13" width="2" height="2" fill="#4A7FAD"/>
+  <rect x="11" y="13" width="2" height="2" fill="#4A7FAD"/>
+  <!-- 第2层窗户 -->
+  <rect x="5" y="17" width="2" height="2" fill="#4A7FAD"/>
+  <rect x="11" y="17" width="2" height="2" fill="#4A7FAD"/>
+  <!-- 第1层门 -->
+  <rect x="8" y="19" width="3" height="3" fill="#8B6A3E"/>
+  <!-- 门把手 -->
+  <rect x="10" y="20" width="1" height="1" fill="#FFD700"/>
+  <!-- 地基 -->
+  <rect x="2" y="22" width="14" height="2" fill="#6B5E50"/>
+  <!-- 烟囱 -->
+  <rect x="13" y="1" width="2" height="3" fill="#A0522D"/>
+</svg>

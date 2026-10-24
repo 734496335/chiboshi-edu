@@ -1,0 +1,25 @@
+name: Learning or developer improvement
+description: Propose a focused improvement with a way to verify it.
+title: "[Idea] "
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Learning or developer need
+      description: Who would benefit, and what is difficult today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Smallest useful change
+      description: Explain the resulting behavior and its limits.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: How could we verify the result?
+      description: Suggest a repeatable activity, example, or check.
+    validations:
+      required: true

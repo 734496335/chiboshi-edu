@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<title>图标搜索引擎实测 · /api/icon/find</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+    background: #FFF8E7;
+    color: #4A3520;
+    margin: 0;
+    padding: 32px;
+  }
+  h1 { font-size: 26px; margin: 0 0 6px; }
+  .sub { color: #4A3520aa; margin-bottom: 24px; font-size: 14px; line-height: 1.6; }
+  .input-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  input[type="text"] {
+    flex: 1;
+    min-width: 240px;
+    padding: 12px 18px;
+    font-size: 18px;
+    border: 2px solid #E5D9B6;
+    border-bottom-width: 4px;
+    border-radius: 14px;
+    background: #fff;
+    color: #4A3520;
+    outline: none;
+  }
+  input[type="text"]:focus { border-color: #4A90D9; }
+  button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    border: 2px solid #3A78B8;
+    border-bottom-width: 4px;
+    border-radius: 14px;
+    background: #4A90D9;
+    color: #fff;
+    cursor: pointer;
+  }
+  button:active { border-bottom-width: 2px; transform: translateY(2px); }
+  .quick {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+  .quick button {
+    padding: 6px 14px;
+    font-size: 13px;
+    background: #fff;
+    color: #4A3520;
+    border-color: #E5D9B6;
+  }
+  .results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: #fff;
+    border: 2px solid #E5D9B6;
+    border-bottom-width: 4px;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+  }
+  .frame {
+    background: #FFF1CF;
+    border-radius: 12px;
+    padding: 16px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .frame img { width: 140px; height: 140px; object-fit: contain; }
+  .frame[data-bw="true"] img { filter: grayscale(1) contrast(1.2); }
+  .query { margin-top: 14px; font-size: 18px; font-weight: 700; }
+  .meta {
+    margin-top: 4px;
+    font-size: 12px;
+    font-family: ui-monospace, "Fira Code", monospace;
+    color: #4A3520aa;
+    word-break: break-all;
+  }
+  .collection {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 6px;
+  }
+  .c-openmoji { background: #FFF3D6; color: #B8841A; }
+  .c-game-icons { background: #EFE5FF; color: #6E3CB8; }
+  .c-mdi { background: #DBEDFF; color: #2C73B5; }
+  .c-miss { background: #FFD6D6; color: #B33; }
+</style>
+</head>
+<body>
+  <h1>🔍 图标搜索 · /api/icon/find</h1>
+  <p class="sub">
+    优先级：<strong>OpenMoji Color</strong> &gt; <strong>Game Icons</strong> &gt; <strong>MDI</strong> &gt;
+    <strong>OpenMoji（grayscale 兜底）</strong>。<br/>
+    所有 <code>@iconify-json/*</code> 数据已本地化，搜索完全离线（< 5ms）。
+  </p>
+
+  <div class="input-row">
+    <input id="obj" type="text" placeholder="输入物体名，如：港珠澳大桥 / 学校 / 椰子树 / 高铁列车 / 霸王龙" />
+    <button id="go">搜索</button>
+  </div>
+
+  <div class="quick">
+    <span style="align-self:center;color:#4A3520aa;font-size:13px;">references.ts 全集：</span>
+    <button data-q="芝麻">芝麻</button>
+    <button data-q="蚂蚁">蚂蚁</button>
+    <button data-q="筷子">筷子</button>
+    <button data-q="课桌">课桌</button>
+    <button data-q="椰子树">椰子树</button>
+    <button data-q="校车">校车</button>
+    <button data-q="蓝鲸">蓝鲸</button>
+    <button data-q="篮球场">篮球场</button>
+    <button data-q="教学楼">教学楼</button>
+    <button data-q="海口大悦城">海口大悦城</button>
+    <button data-q="迪拜哈利法塔">迪拜哈利法塔</button>
+    <button data-q="操场跑道一圈">操场跑道一圈</button>
+    <button data-q="珠穆朗玛峰">珠穆朗玛峰</button>
+    <button data-q="港珠澳大桥">港珠澳大桥</button>
+    <button data-q="海南岛宽度">海南岛宽度</button>
+  </div>
+
+  <div class="quick">
+    <span style="align-self:center;color:#4A3520aa;font-size:13px;">长尾测试：</span>
+    <button data-q="霸王龙">霸王龙</button>
+    <button data-q="高铁列车">高铁列车</button>
+    <button data-q="商场">商场</button>
+    <button data-q="埃菲尔铁塔">埃菲尔铁塔</button>
+    <button data-q="一只小狗">一只小狗</button>
+    <button data-q="地球">地球</button>
+    <button data-q="苹果">苹果</button>
+    <button data-q="不存在的奇怪东西">不存在的奇怪东西</button>
+  </div>
+
+  <hr style="margin: 32px 0; border: 0; border-top: 2px dashed #E5D9B6;" />
+  <h2 style="font-size:22px;margin-bottom:8px;">🧪 库内未命中 → AI 生成 SVG (QA 流水线)</h2>
+  <p class="sub">
+    当 <code>pickIcon</code> 返回 <code>null</code> 时，自动调 MiMo 生 SVG，跑质检后落盘缓存到
+    <code>/icons/generated/&lbrace;slug&rbrace;.svg</code>。<strong>第一次 5-15 秒</strong>，命中缓存后毫秒返回。
+  </p>
+  <div class="input-row">
+    <input id="genObj" type="text" placeholder="输入冷僻物体，如：复兴号高铁 / 双层巴士 / 故宫角楼" />
+    <button id="genGo">生成 SVG</button>
+  </div>
+  <div class="quick">
+    <span style="align-self:center;color:#4A3520aa;font-size:13px;">点这些会触发生成（首次会等几秒）：</span>
+    <button data-gen="复兴号高铁">复兴号高铁</button>
+    <button data-gen="双层巴士">双层巴士</button>
+    <button data-gen="故宫角楼">故宫角楼</button>
+    <button data-gen="变形金刚">变形金刚</button>
+    <button data-gen="孙悟空">孙悟空</button>
+    <button data-gen="一支毛笔">一支毛笔</button>
+  </div>
+  <div id="genResults" class="results"></div>
+
+  <h3 style="margin-top:32px;font-size:18px;">📋 综合搜索结果</h3>
+  <div id="results" class="results"></div>
+
+<script>
+async function search(q) {
+  if (!q) return;
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `
+    <div class="frame">⏳ 搜索中…</div>
+    <div class="query">${q}</div>
+    <div class="meta">…</div>
+  `;
+  document.getElementById('results').prepend(card);
+
+  const t0 = performance.now();
+  try {
+    const res = await fetch('/api/icon/find?q=' + encodeURIComponent(q));
+    const data = await res.json();
+    const dt = (performance.now() - t0).toFixed(0);
+
+    const frame = card.querySelector('.frame');
+    const meta = card.querySelector('.meta');
+
+    if (data.id) {
+      const url = `https://api.iconify.design/${data.id.replace(':', '/')}.svg`;
+      frame.innerHTML = `<img src="${url}" alt="${q}" />`;
+      meta.innerHTML = `
+        <code>${data.id}</code><br/>
+        匹配关键词：${data.matchedTokens.join(', ')} · ${dt}ms
+        <br/><span class="collection c-${data.collection}">${data.collection.toUpperCase()}</span>
+      `;
+    } else {
+      frame.innerHTML = '<span style="color:#B33">❌ 无匹配</span>';
+      meta.innerHTML = `
+        匹配关键词：${(data.matchedTokens || []).join(', ') || '(空)'}
+        <br/><span class="collection c-miss">MISS</span>
+      `;
+    }
+  } catch (e) {
+    card.querySelector('.frame').innerHTML = '❌ 请求失败';
+    card.querySelector('.meta').textContent = e.message;
+  }
+}
+
+const input = document.getElementById('obj');
+document.getElementById('go').addEventListener('click', () => search(input.value.trim()));
+input.addEventListener('keydown', e => { if (e.key === 'Enter') search(input.value.trim()); });
+document.querySelectorAll('.quick button').forEach(b => {
+  b.addEventListener('click', () => {
+    input.value = b.dataset.q;
+    search(b.dataset.q);
+  });
+});
+
+// 默认演示一个
+window.addEventListener('load', () => search('港珠澳大桥'));
+
+// ================= AI 生成 SVG 测试 =================
+async function generate(object) {
+  if (!object) return;
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `
+    <div class="frame">⏳ MiMo 正在画 "${object}"…<br/><span style="font-size:11px;color:#888;">最多 3 次重试 + QA</span></div>
+    <div class="query">${object}</div>
+    <div class="meta">生成中…</div>
+  `;
+  document.getElementById('genResults').prepend(card);
+
+  const t0 = performance.now();
+  try {
+    const res = await fetch('/api/ai/sketch', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ object }),
+    });
+    const data = await res.json();
+    const dt = ((performance.now() - t0) / 1000).toFixed(1);
+    const frame = card.querySelector('.frame');
+    const meta = card.querySelector('.meta');
+
+    if (res.ok && data.url) {
+      frame.innerHTML = `<img src="${data.url}" alt="${object}" />`;
+      const issueText = (data.issues || []).length
+        ? `<br/>QA 警告 ${data.issues.length} 条`
+        : '<br/>✅ QA 全通过';
+      meta.innerHTML = `
+        <code>${data.id}</code><br/>
+        ${data.cached ? '💾 缓存命中' : '🆕 新生成'} · ${data.attempts || 0} 次尝试 · ${dt}s${issueText}
+      `;
+      if ((data.issues || []).length) {
+        const det = document.createElement('details');
+        det.style.marginTop = '8px';
+        det.innerHTML = `<summary style="cursor:pointer;font-size:11px;color:#B33;">查看警告</summary><pre style="font-size:10px;text-align:left;background:#FFF8E7;padding:6px;border-radius:6px;white-space:pre-wrap;">${data.issues.map(i => `[${i.severity}] ${i.code}: ${i.message}`).join('\n')}</pre>`;
+        card.appendChild(det);
+      }
+    } else {
+      frame.innerHTML = '<span style="color:#B33">❌ 生成失败</span>';
+      meta.innerHTML = `<span class="collection c-miss">FAIL · ${data.attempts || 0} 次尝试</span><br/>${(data.issues || []).map(i => i.message).join('; ')}`;
+    }
+  } catch (e) {
+    card.querySelector('.frame').innerHTML = '❌ 请求失败';
+    card.querySelector('.meta').textContent = e.message;
+  }
+}
+
+const genInput = document.getElementById('genObj');
+document.getElementById('genGo').addEventListener('click', () => generate(genInput.value.trim()));
+genInput.addEventListener('keydown', e => { if (e.key === 'Enter') generate(genInput.value.trim()); });
+document.querySelectorAll('[data-gen]').forEach(b => {
+  b.addEventListener('click', () => {
+    genInput.value = b.dataset.gen;
+    generate(b.dataset.gen);
+  });
+});
+</script>
+</body>
+</html>

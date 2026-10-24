@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="16" viewBox="0 0 28 16" shape-rendering="crispEdges">
+  <!-- 胶卷主体（上边缘） -->
+  <rect x="0" y="0" width="28" height="2" fill="#2A2A2A"/>
+  <!-- 胶卷主体（下边缘） -->
+  <rect x="0" y="14" width="28" height="2" fill="#2A2A2A"/>
+  <!-- 电影画面区域 -->
+  <rect x="2" y="2" width="24" height="12" fill="#1E1E1E"/>
+  <!-- 画面内容：星空背景 -->
+  <rect x="2" y="2" width="24" height="12" fill="#0B0B2B"/>
+  <!-- 月亮 -->
+  <rect x="18" y="3" width="6" height="6" fill="#E8E8A0"/>
+  <rect x="20" y="4" width="4" height="4" fill="#0B0B2B"/>
+  <!-- 行星 -->
+  <rect x="5" y="5" width="4" height="4" fill="#5DADE2"/>
+  <rect x="5" y="5" width="4" height="1" fill="#3498DB"/>
+  <!-- 电影标题条 -->
+  <rect x="4" y="11" width="20" height="3" fill="#C0392B"/>
+  <!-- 胶卷齿孔（顶部） -->
+  <rect x="2" y="0" width="1" height="2" fill="#151515"/>
+  <rect x="6" y="0" width="1" height="2" fill="#151515"/>
+  <rect x="10" y="0" width="1" height="2" fill="#151515"/>
+  <rect x="14" y="0" width="1" height="2" fill="#151515"/>
+  <rect x="18" y="0" width="1" height="2" fill="#151515"/>
+  <rect x="22" y="0" width="1" height="2" fill="#151515"/>
+  <rect x="26" y="0" width="1" height="2" fill="#151515"/>
+  <!-- 胶卷齿孔（底部） -->
+  <rect x="2" y="14" width="1" height="2" fill="#151515"/>
+  <rect x="6" y="14" width="1" height="2" fill="#151515"/>
+  <rect x="10" y="14" width="1" height="2" fill="#151515"/>
+  <rect x="14" y="14" width="1" height="2" fill="#151515"/>
+  <rect x="18" y="14" width="1" height="2" fill="#151515"/>
+  <rect x="22" y="14" width="1" height="2" fill="#151515"/>
+  <rect x="26" y="14" width="1" height="2" fill="#151515"/>
+</svg>

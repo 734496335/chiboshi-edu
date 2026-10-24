@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="24 78 216 110" fill="none" aria-label="铅笔" preserveAspectRatio="xMidYMid meet">
+  <!-- 阴影地板（不影响左右边界） -->
+  <ellipse cx="132" cy="182" rx="100" ry="6" fill="#4A3520" opacity="0.12"/>
+
+  <!-- 主体描边参数：深棕 / 4px / 圆角圆头 -->
+  <g stroke="#4A3520" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- 1) 橡皮（粉色，左端，圆角矩形） -->
+    <path d="M 24 100 Q 24 90 34 90 L 54 90 L 54 166 L 34 166 Q 24 166 24 156 Z"
+          fill="#FF9CC8"/>
+    <!-- 橡皮高光 -->
+    <path d="M 30 100 L 30 110" stroke="#FFC4DD" stroke-width="3" opacity="0.9"/>
+
+    <!-- 2) 金属包圈（银色，竖条纹） -->
+    <rect x="54" y="90" width="22" height="76" fill="#D9D9DC"/>
+    <line x1="60" y1="98" x2="60" y2="158" stroke="#4A3520" stroke-width="2.5"/>
+    <line x1="68" y1="98" x2="68" y2="158" stroke="#4A3520" stroke-width="2.5"/>
+    <!-- 金属高光 -->
+    <line x1="58" y1="100" x2="58" y2="120" stroke="#FFFFFF" stroke-width="2" opacity="0.9"/>
+
+    <!-- 3) 笔身（黄色，长方形） -->
+    <rect x="76" y="90" width="124" height="76" fill="#FFC93C"/>
+    <!-- 笔身上下高光线（暗示六角棱） -->
+    <line x1="86" y1="100" x2="190" y2="100" stroke="#FFE38A" stroke-width="4" opacity="0.95"/>
+    <line x1="86" y1="156" x2="190" y2="156" stroke="#D89A1A" stroke-width="3" opacity="0.6"/>
+
+    <!-- 4) 木头削尖部（米色三角） -->
+    <path d="M 200 90 L 230 128 L 200 166 Z" fill="#E8B970"/>
+    <!-- 木纹 -->
+    <line x1="207" y1="104" x2="220" y2="120" stroke="#4A3520" stroke-width="2" opacity="0.5" stroke-linecap="round"/>
+    <line x1="207" y1="152" x2="220" y2="136" stroke="#4A3520" stroke-width="2" opacity="0.5" stroke-linecap="round"/>
+
+    <!-- 5) 笔尖（深色） -->
+    <path d="M 222 117 L 240 128 L 222 139 Z" fill="#2C2118"/>
+  </g>
+</svg>

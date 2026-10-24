@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="24" viewBox="0 0 12 24" shape-rendering="crispEdges">
+  <!-- 左筷子左列 -->
+  <rect x="3" y="2" width="1" height="2" fill="#6B4220"/>
+  <rect x="3" y="4" width="1" height="6" fill="#8B5A2B"/>
+  <rect x="3" y="10" width="1" height="8" fill="#A06030"/>
+  <rect x="3" y="18" width="1" height="4" fill="#8B5A2B"/>
+  <!-- 左筷子右列 -->
+  <rect x="4" y="2" width="1" height="2" fill="#A06030"/>
+  <rect x="4" y="4" width="1" height="2" fill="#C07840"/>
+  <rect x="4" y="6" width="1" height="2" fill="#E8B060"/>
+  <rect x="4" y="8" width="1" height="2" fill="#C07840"/>
+  <rect x="4" y="10" width="1" height="8" fill="#D4A060"/>
+  <rect x="4" y="18" width="1" height="4" fill="#C07840"/>
+  <!-- 右筷子左列 -->
+  <rect x="7" y="2" width="1" height="2" fill="#6B4220"/>
+  <rect x="7" y="4" width="1" height="6" fill="#8B5A2B"/>
+  <rect x="7" y="10" width="1" height="8" fill="#A06030"/>
+  <rect x="7" y="18" width="1" height="4" fill="#8B5A2B"/>
+  <!-- 右筷子右列 -->
+  <rect x="8" y="2" width="1" height="2" fill="#A06030"/>
+  <rect x="8" y="4" width="1" height="2" fill="#C07840"/>
+  <rect x="8" y="6" width="1" height="2" fill="#E8B060"/>
+  <rect x="8" y="8" width="1" height="2" fill="#C07840"/>
+  <rect x="8" y="10" width="1" height="8" fill="#D4A060"/>
+  <rect x="8" y="18" width="1" height="4" fill="#C07840"/>
+</svg>

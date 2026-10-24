@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" shape-rendering="crispEdges">
+  <!-- 骰子主体（米白色） -->
+  <rect x="4" y="4" width="12" height="12" fill="#F5F5F0"/>
+  <!-- 骰子左边缘阴影 -->
+  <rect x="4" y="4" width="1" height="12" fill="#E0E0D8"/>
+  <!-- 骰子上边缘阴影 -->
+  <rect x="4" y="4" width="12" height="1" fill="#E0E0D8"/>
+  <!-- 6个点（深灰色） -->
+  <rect x="6" y="6" width="2" height="2" fill="#404040"/>
+  <rect x="6" y="9" width="2" height="2" fill="#404040"/>
+  <rect x="6" y="12" width="2" height="2" fill="#404040"/>
+  <rect x="12" y="6" width="2" height="2" fill="#404040"/>
+  <rect x="12" y="9" width="2" height="2" fill="#404040"/>
+  <rect x="12" y="12" width="2" height="2" fill="#404040"/>
+  <!-- 骰子右下边缘细节（模拟轮廓） -->
+  <rect x="15" y="5" width="1" height="11" fill="#D0D0C8"/>
+  <rect x="5" y="15" width="11" height="1" fill="#D0D0C8"/>
+  <rect x="15" y="15" width="1" height="1" fill="#B0B0A8"/>
+</svg>

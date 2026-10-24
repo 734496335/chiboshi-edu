@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none" aria-label="一年级小朋友">
+  <ellipse cx="128" cy="244" rx="60" ry="6" fill="#4A3520" opacity="0.15"/>
+
+  <g stroke="#4A3520" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 双腿 -->
+    <rect x="100" y="200" width="20" height="40" rx="6" fill="#3A4A6B"/>
+    <rect x="136" y="200" width="20" height="40" rx="6" fill="#3A4A6B"/>
+    <!-- 鞋子 -->
+    <ellipse cx="110" cy="242" rx="14" ry="6" fill="#2C2118"/>
+    <ellipse cx="146" cy="242" rx="14" ry="6" fill="#2C2118"/>
+
+    <!-- 身体（白色校服） -->
+    <path d="M 84 130
+             Q 84 116 100 116
+             L 156 116
+             Q 172 116 172 130
+             L 172 200
+             Q 172 210 162 210
+             L 94 210
+             Q 84 210 84 200 Z"
+          fill="#FFFFFF"/>
+    <!-- 校服中线 -->
+    <line x1="128" y1="116" x2="128" y2="210" stroke-width="3" opacity="0.4"/>
+
+    <!-- 红领巾 -->
+    <path d="M 104 116 L 128 168 L 152 116 Z" fill="#FF5B5B"/>
+    <path d="M 122 168 L 134 168 L 128 178 Z" fill="#FF5B5B"/>
+
+    <!-- 双臂（垂直） -->
+    <rect x="64" y="130" width="22" height="60" rx="10" fill="#FFFFFF"/>
+    <rect x="170" y="130" width="22" height="60" rx="10" fill="#FFFFFF"/>
+
+    <!-- 头部 -->
+    <circle cx="128" cy="78" r="38" fill="#FFD9A0"/>
+
+    <!-- 头发（黑色齐刘海） -->
+    <path d="M 92 70
+             Q 92 40 128 40
+             Q 164 40 164 70
+             Q 164 76 160 76
+             L 96 76
+             Q 92 76 92 70 Z"
+          fill="#2C2118"/>
+  </g>
+
+  <!-- 眼睛 -->
+  <circle cx="116" cy="84" r="4" fill="#2C2118"/>
+  <circle cx="140" cy="84" r="4" fill="#2C2118"/>
+
+  <!-- 嘴 -->
+  <path d="M 120 98 Q 128 104 136 98" stroke="#4A3520" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+  <!-- 腮红 -->
+  <circle cx="104" cy="94" r="5" fill="#FFB6C1" opacity="0.7"/>
+  <circle cx="152" cy="94" r="5" fill="#FFB6C1" opacity="0.7"/>
+</svg>

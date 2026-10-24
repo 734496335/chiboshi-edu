@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="14" viewBox="0 0 28 14" shape-rendering="crispEdges">
+  <!-- 橡皮 -->
+  <rect x="3" y="4" width="2" height="6" fill="#FF6B9D"/>
+  <!-- 金属箍 -->
+  <rect x="5" y="3" width="1" height="8" fill="#C0C0C0"/>
+  <!-- 笔身上阴影 -->
+  <rect x="6" y="3" width="12" height="1" fill="#D2953A"/>
+  <!-- 笔身主体 -->
+  <rect x="6" y="4" width="12" height="6" fill="#FFD700"/>
+  <!-- 笔身下阴影 -->
+  <rect x="6" y="10" width="12" height="1" fill="#D2953A"/>
+  <!-- 笔尖木头 - 第一列 -->
+  <rect x="18" y="3" width="1" height="8" fill="#F5C87A"/>
+  <!-- 笔尖木头 - 第二列上部 -->
+  <rect x="19" y="4" width="1" height="3" fill="#F5C87A"/>
+  <!-- 笔尖石墨 - 第二列下部 -->
+  <rect x="19" y="7" width="1" height="3" fill="#333333"/>
+  <!-- 笔尖石墨 - 第三列 -->
+  <rect x="20" y="5" width="1" height="4" fill="#333333"/>
+</svg>

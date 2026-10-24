@@ -1,0 +1,20 @@
+{
+  "bakedAt": "2026-05-31T10:31:03.357642",
+  "stats": {
+    "ok": 1,
+    "fail": 0,
+    "failures": []
+  },
+  "total": 1,
+  "model": {
+    "base": "D:\\models\\FLUX.1-schnell",
+    "style_mode": "illustration"
+  },
+  "params": {
+    "gen_base": 1024,
+    "target_long": 864,
+    "palette_colors": 32,
+    "guidance": 0.0,
+    "steps": 4
+  }
+}

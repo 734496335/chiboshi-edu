@@ -1,0 +1,11 @@
+# Pip 依赖。setup.bat 会用国内镜像安装：
+#   torch / torchvision    从 上海交大 pytorch-wheels 镜像（cu124，支持 RTX 50 系）
+#   其余包                 从 阿里云 PyPI 镜像
+diffusers>=0.31
+transformers>=4.46
+accelerate>=1.1
+peft>=0.13
+safetensors
+huggingface_hub
+pillow
+tqdm

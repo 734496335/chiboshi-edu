@@ -1,0 +1,68 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+!.env.local.example
+
+# Private operations, unpublished provenance, and local archives
+/.local/
+/.understand-anything/
+/chiboshi-standalone.zip
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# pixel-bake 中间产物（refs.json 由 _dump-refs.mts 生成；
+# manifest.json 由 bake.py 生成；PNG 产物建议提交以免每次都跑 30 分钟）
+/scripts/pixel-bake/refs.json
+/scripts/pixel-bake/__pycache__
+
+# ָ̲ / ӦٳֵĽű
+/dev-startup.log
+/regen_all.bat
+/regen_all.log
+/regen_all.stdout.tmp
+/regen_all.stderr.tmp
+/bake.log
+
+# Local dynamically generated LLM configurations
+llm_config.json
+
+# Temporary Office/WPS files
+~$*
+.wpp_backup/
+

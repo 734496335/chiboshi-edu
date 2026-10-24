@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none" aria-label="花生">
+  <ellipse cx="128" cy="220" rx="64" ry="6" fill="#4A3520" opacity="0.15"/>
+
+  <g stroke="#4A3520" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 花生壳 8 字形 -->
+    <path d="M 128 36
+             Q 88 36 84 78
+             Q 84 110 116 118
+             Q 84 126 84 178
+             Q 84 220 128 220
+             Q 172 220 172 178
+             Q 172 126 140 118
+             Q 172 110 172 78
+             Q 168 36 128 36 Z"
+          fill="#D8A062"/>
+
+    <!-- 上半部纹理 -->
+    <path d="M 100 60 Q 110 70 100 84" stroke-width="3" opacity="0.5" fill="none"/>
+    <path d="M 156 60 Q 146 70 156 84" stroke-width="3" opacity="0.5" fill="none"/>
+    <path d="M 108 88 Q 128 96 148 88" stroke-width="3" opacity="0.5" fill="none"/>
+
+    <!-- 下半部纹理 -->
+    <path d="M 100 144 Q 110 158 100 174" stroke-width="3" opacity="0.5" fill="none"/>
+    <path d="M 156 144 Q 146 158 156 174" stroke-width="3" opacity="0.5" fill="none"/>
+    <path d="M 100 188 Q 110 200 100 212" stroke-width="3" opacity="0.5" fill="none"/>
+    <path d="M 156 188 Q 146 200 156 212" stroke-width="3" opacity="0.5" fill="none"/>
+    <path d="M 108 200 Q 128 208 148 200" stroke-width="3" opacity="0.5" fill="none"/>
+
+    <!-- 上下亮色高光 -->
+    <ellipse cx="108" cy="64" rx="10" ry="14" fill="#F0C28A" stroke="none" opacity="0.7"/>
+    <ellipse cx="108" cy="160" rx="10" ry="14" fill="#F0C28A" stroke="none" opacity="0.7"/>
+  </g>
+</svg>

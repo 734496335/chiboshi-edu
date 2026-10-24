@@ -1,0 +1,10 @@
+## lianggan pixel-bake conda env (slim)
+##
+## Pip 依赖（含 PyTorch）由 setup.bat 走国内镜像单独装，速度快得多。
+## 这里只用 conda 装 Python + pip。
+name: lianggan-pixel
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip

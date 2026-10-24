@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none" aria-label="蚂蚁">
+  <ellipse cx="128" cy="200" rx="70" ry="6" fill="#4A3520" opacity="0.15"/>
+
+  <g stroke="#4A3520" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 6 条腿（先画，让身体盖住根部） -->
+    <path d="M 100 150 L 70 178" />
+    <path d="M 100 158 L 60 158" />
+    <path d="M 105 168 L 80 192" />
+    <path d="M 156 150 L 186 178" />
+    <path d="M 156 158 L 196 158" />
+    <path d="M 151 168 L 176 192" />
+
+    <!-- 触须 -->
+    <path d="M 90 100 Q 78 80 60 84" />
+    <path d="M 102 96 Q 96 76 82 70" />
+    <circle cx="60" cy="84" r="4" fill="#4A3520" stroke="none"/>
+    <circle cx="82" cy="70" r="4" fill="#4A3520" stroke="none"/>
+
+    <!-- 头部 -->
+    <circle cx="108" cy="118" r="26" fill="#5C3A1E"/>
+    <!-- 胸部 -->
+    <ellipse cx="140" cy="148" rx="22" ry="20" fill="#7A4E2A"/>
+    <!-- 腹部（大圆） -->
+    <ellipse cx="180" cy="152" rx="38" ry="32" fill="#5C3A1E"/>
+    <!-- 腹部高光 -->
+    <ellipse cx="168" cy="142" rx="10" ry="6" fill="#9B6634" stroke="none" opacity="0.7"/>
+  </g>
+
+  <!-- 表情 -->
+  <g fill="#FFFFFF" stroke="#4A3520" stroke-width="3">
+    <circle cx="100" cy="114" r="6"/>
+    <circle cx="116" cy="114" r="6"/>
+  </g>
+  <circle cx="100" cy="115" r="2.5" fill="#4A3520"/>
+  <circle cx="116" cy="115" r="2.5" fill="#4A3520"/>
+  <!-- 微笑 -->
+  <path d="M 100 130 Q 108 134 116 130" stroke="#4A3520" stroke-width="3" stroke-linecap="round" fill="none"/>
+</svg>

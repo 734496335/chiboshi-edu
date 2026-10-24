@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 74 216 162" fill="none" aria-label="公交车" preserveAspectRatio="xMidYMid meet">
+  <ellipse cx="128" cy="232" rx="98" ry="5" fill="#4A3520" opacity="0.12"/>
+
+  <g stroke="#4A3520" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 车身（蓝色，圆角矩形） -->
+    <rect x="20" y="80" width="216" height="120" rx="18" fill="#4A90D9"/>
+
+    <!-- 顶部白边 -->
+    <rect x="26" y="86" width="204" height="14" rx="7" fill="#FFFFFF" stroke="none"/>
+
+    <!-- 窗户带（一长条白色，内部分窗） -->
+    <rect x="34" y="106" width="188" height="44" rx="6" fill="#E8F4FF"/>
+    <line x1="80"  y1="106" x2="80"  y2="150"/>
+    <line x1="126" y1="106" x2="126" y2="150"/>
+    <line x1="172" y1="106" x2="172" y2="150"/>
+    <!-- 窗户高光 -->
+    <path d="M 40 112 L 40 134" stroke="#FFFFFF" stroke-width="4" opacity="0.9"/>
+    <path d="M 86 112 L 86 134" stroke="#FFFFFF" stroke-width="4" opacity="0.9"/>
+
+    <!-- 车门（右侧） -->
+    <rect x="190" y="155" width="36" height="42" rx="4" fill="#3A78B8"/>
+    <line x1="208" y1="160" x2="208" y2="195"/>
+
+    <!-- 装饰条 -->
+    <rect x="26" y="160" width="158" height="8" rx="4" fill="#FFC93C" stroke="none"/>
+
+    <!-- 前大灯 -->
+    <circle cx="232" cy="180" r="6" fill="#FFE38A"/>
+
+    <!-- 车头号牌 -->
+    <rect x="34" y="178" width="36" height="14" rx="3" fill="#FFFFFF"/>
+
+    <!-- 轮子 -->
+    <circle cx="68"  cy="208" r="20" fill="#2C2118"/>
+    <circle cx="68"  cy="208" r="9"  fill="#BDBDBD"/>
+    <circle cx="200" cy="208" r="20" fill="#2C2118"/>
+    <circle cx="200" cy="208" r="9"  fill="#BDBDBD"/>
+  </g>
+</svg>

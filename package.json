@@ -1,0 +1,78 @@
+{
+  "name": "chiboshi-edu",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "lint": "eslint",
+    "bake:icons": "node scripts/bake-icons.mjs",
+    "bake:icons:force": "node scripts/bake-icons.mjs --force",
+    "typecheck": "next typegen && tsc --noEmit",
+    "check:bundle": "node scripts/check-standalone.mjs",
+    "test": "node --test scripts/test-config.mjs"
+  },
+  "dependencies": {
+    "@floating-ui/react": "^0.27.19",
+    "@iconify-json/game-icons": "^1.2.4",
+    "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/openmoji": "^1.2.27",
+    "@iconify/react": "^6.0.2",
+    "@radix-ui/react-progress": "^1.1.8",
+    "@radix-ui/react-slot": "^1.2.4",
+    "canvas-confetti": "^1.9.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.38.0",
+    "lottie-react": "^2.4.1",
+    "lucide-react": "^1.16.0",
+    "next": "16.2.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-kawaii": "^1.6.0",
+    "react-rewards": "^2.1.0",
+    "rough-notation": "^0.5.1",
+    "roughjs": "^4.6.6",
+    "tailwind-merge": "^3.6.0",
+    "vaul": "^1.1.2",
+    "wired-elements": "^3.0.0-rc.6"
+  },
+  "devDependencies": {
+    "@iconify-json/fluent-emoji": "^1.2.7",
+    "@resvg/resvg-js": "^2.6.2",
+    "@tailwindcss/postcss": "^4",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "description": "An independently maintained educational playground for exploring measurement through visual comparison.",
+  "license": "MIT",
+  "author": {
+    "name": "734496335",
+    "url": "https://github.com/734496335"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/734496335/chiboshi-edu.git"
+  },
+  "homepage": "https://github.com/734496335/chiboshi-edu#readme",
+  "bugs": {
+    "url": "https://github.com/734496335/chiboshi-edu/issues"
+  },
+  "keywords": [
+    "education",
+    "measurement",
+    "mathematics",
+    "visual-learning",
+    "nextjs"
+  ],
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}

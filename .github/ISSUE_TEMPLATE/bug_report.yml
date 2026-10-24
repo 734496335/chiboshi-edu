@@ -1,0 +1,38 @@
+name: Bug or content correction
+description: Report a reproducible problem or a measurement that needs review.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "Keep API keys, student identities, and other private information out of this report. Follow SECURITY.md for sensitive findings."
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include the affected activity, dimension, quantity, and unit where relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Use generic example inputs that another person can repeat.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: For a content correction, include a source or measurement method.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Commit, Node.js version, browser, and operating system.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs or screenshot
+      description: Remove credentials and personal information before attaching anything.
