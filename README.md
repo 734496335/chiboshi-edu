@@ -10,7 +10,7 @@
 
 Start with a familiar reference, try a deliberately implausible estimate, and change **5 m** to **5 mm**. The numeral stays the same; the length becomes one thousandth as large.
 
-[![12-second recording: compare a five-metre ant, change the input to five millimetres, and inspect the new references](docs/media/preview.gif)](https://github.com/user-attachments/assets/3b743335-85b2-4b79-a41a-0cc0c6208fb1)
+[![12-second recording: compare a five-metre ant, change the input to five millimetres, and inspect the new references](docs/media/preview.gif)](docs/media/README.md#focused-unit-change-clip)
 
 *Real local interaction, with English annotations. The current classroom interface is Chinese. [Static preview](docs/media/video-poster.png) · [Transcript](docs/media/transcript.md)*
 
