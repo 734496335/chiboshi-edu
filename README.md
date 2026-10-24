@@ -10,17 +10,17 @@
 
 Start with a familiar reference, try a deliberately implausible estimate, and change **5 m** to **5 mm**. The numeral stays the same; the length becomes one thousandth as large.
 
-[![12-second recording: compare a five-metre ant, change the input to five millimetres, and inspect the new references](docs/media/preview.gif)](docs/media/README.md#watch)
+[![12-second recording: compare a five-metre ant, change the input to five millimetres, and inspect the new references](docs/media/preview.gif)](https://github.com/user-attachments/assets/3b743335-85b2-4b79-a41a-0cc0c6208fb1)
 
 *Real local interaction, with English annotations. The current classroom interface is Chinese. [Static preview](docs/media/video-poster.png) · [Transcript](docs/media/transcript.md)*
 
 ### Watch the full walkthrough
 
-[Watch the 47-second educational walkthrough](docs/media/README.md#watch)
+https://github.com/user-attachments/assets/a7f22919-13b0-4331-a749-0ffd86a8e11a
 
 The walkthrough shows the reference library, an estimate and revision, capacity examples, and how to contribute. It has English explanations and no audio. The recording uses the real local fallback with **no API key**; it is not a demonstration of an AI model checking the answer.
 
-[Caption file](docs/media/walkthrough.en.vtt) · [Teaching prompts and transcript](docs/media/transcript.md) · [Media kit and reproducible recording](docs/media/README.md)
+[16-second unit-change clip](https://github.com/user-attachments/assets/3b743335-85b2-4b79-a41a-0cc0c6208fb1) · [Caption file](docs/media/walkthrough.en.vtt) · [Teaching prompts and transcript](docs/media/transcript.md) · [Media kit and reproducible recording](docs/media/README.md)
 
 ## Run locally
 

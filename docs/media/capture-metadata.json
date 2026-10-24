@@ -10,28 +10,30 @@
   "video": {
     "width": 1600,
     "height": 900,
-    "fps": 25.0,
+    "fps": 25,
     "seconds": 46.64,
     "codec": "h264",
     "bytes": 1124500,
     "sha256": "44957d9d07671854589ddf175f4cacbbfdb60ed92044a436ad52e21355bbcbfb",
-    "audio": false
+    "audio": false,
+    "url": "https://github.com/user-attachments/assets/a7f22919-13b0-4331-a749-0ffd86a8e11a"
   },
   "preview": {
-    "seconds": 12.0,
+    "seconds": 12,
     "width": 960,
     "height": 720,
     "bytes": 1674350
   },
   "teaser": {
-    "seconds": 16.0,
+    "seconds": 16,
     "bytes": 444323,
-    "sha256": "58fc1c445b12610aff9d246dce531d59a5a2601f8c4da1b4f01a463f4cd15e27"
+    "sha256": "58fc1c445b12610aff9d246dce531d59a5a2601f8c4da1b4f01a463f4cd15e27",
+    "url": "https://github.com/user-attachments/assets/3b743335-85b2-4b79-a41a-0cc0c6208fb1"
   },
   "chapters": [
     {
       "id": "01-home",
-      "start": 0.0,
+      "start": 0,
       "end": 5.24
     },
     {

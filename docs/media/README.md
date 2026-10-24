@@ -6,7 +6,15 @@ A small set of real demonstrations for educators, learners, and open-source cont
 
 ## Watch
 
-The full **47-second walkthrough** and a focused **16-second unit-change clip** are attached to the media update pull request and linked from the project README. Videos use H.264 at 1600 × 900, 25 fps, with English explanations built into the frames. Both are silent and suitable for watching without sound.
+The full **47-second walkthrough** and a focused **16-second unit-change clip** are attached to [the media update](https://github.com/734496335/chiboshi-edu/pull/1). Videos use H.264 at 1600 × 900, 25 fps, with English explanations built into the frames. Both are silent and suitable for watching without sound.
+
+### Full walkthrough
+
+https://github.com/user-attachments/assets/a7f22919-13b0-4331-a749-0ffd86a8e11a
+
+### Focused unit-change clip
+
+https://github.com/user-attachments/assets/3b743335-85b2-4b79-a41a-0cc0c6208fb1
 
 The recordings use the real Chinese classroom interface and the local deterministic comparison fallback. No provider credentials or mocked responses were used.
 
