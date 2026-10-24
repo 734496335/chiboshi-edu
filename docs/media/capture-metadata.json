@@ -1,0 +1,102 @@
+{
+  "capturedAt": "2026-10-24T07:40:46.113Z",
+  "sourceCommit": "3ced23c2bd57723c92a3c59cfcc1f4e50448d73a",
+  "interfaceLanguage": "zh-CN",
+  "annotationsLanguage": "en",
+  "providerConfigured": false,
+  "responseInterception": false,
+  "comparisonSource": "fallback",
+  "pageErrors": [],
+  "video": {
+    "width": 1600,
+    "height": 900,
+    "fps": 25,
+    "seconds": 46.64,
+    "codec": "h264",
+    "bytes": 1124500,
+    "sha256": "44957d9d07671854589ddf175f4cacbbfdb60ed92044a436ad52e21355bbcbfb",
+    "audio": false,
+    "url": "https://github.com/user-attachments/assets/a7f22919-13b0-4331-a749-0ffd86a8e11a"
+  },
+  "preview": {
+    "seconds": 12,
+    "width": 960,
+    "height": 720,
+    "bytes": 1674350
+  },
+  "teaser": {
+    "seconds": 16,
+    "bytes": 444323,
+    "sha256": "58fc1c445b12610aff9d246dce531d59a5a2601f8c4da1b4f01a463f4cd15e27",
+    "url": "https://github.com/user-attachments/assets/3b743335-85b2-4b79-a41a-0cc0c6208fb1"
+  },
+  "chapters": [
+    {
+      "id": "01-home",
+      "start": 0,
+      "end": 5.24
+    },
+    {
+      "id": "02-reference",
+      "start": 5.24,
+      "end": 15.72
+    },
+    {
+      "id": "03-compare",
+      "start": 15.72,
+      "end": 31.72
+    },
+    {
+      "id": "04-capacity",
+      "start": 31.72,
+      "end": 39.64
+    },
+    {
+      "id": "05-contribute",
+      "start": 39.64,
+      "end": 46.64
+    }
+  ],
+  "comparisons": [
+    {
+      "source": "fallback",
+      "object": "蚂蚁",
+      "value": 5,
+      "unit": "米",
+      "valueInSi": 5,
+      "feedback": "先看看比例，再想想这个尺寸合理吗？",
+      "references": [
+        {
+          "label": "小汽车",
+          "value": 4.5,
+          "unit": "m"
+        },
+        {
+          "label": "校车",
+          "value": 11,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "source": "fallback",
+      "object": "蚂蚁",
+      "value": 5,
+      "unit": "毫米",
+      "valueInSi": 0.005,
+      "feedback": "先看看比例，再想想这个尺寸合理吗？",
+      "references": [
+        {
+          "label": "芝麻",
+          "value": 0.002,
+          "unit": "m"
+        },
+        {
+          "label": "大拇指宽",
+          "value": 0.02,
+          "unit": "m"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:05,240
+Chiboshi connects numbers and units with familiar objects.
+
+2
+00:00:05,240 --> 00:00:15,720
+Start with a familiar reference. This dictionary example puts an ant at about 5 mm.
+
+3
+00:00:15,720 --> 00:00:31,720
+Compare a deliberately implausible 5 m estimate, then change it to 5 mm. The length becomes 1,000 times smaller.
+
+4
+00:00:31,720 --> 00:00:39,640
+Explore capacity with familiar containers. Compare 550 mL, 1 L, and 1.5 L.
+
+5
+00:00:39,640 --> 00:00:46,640
+Run locally. Explore the source. Improve explanations, translations, and accessibility.

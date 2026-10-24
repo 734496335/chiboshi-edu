@@ -56,7 +56,7 @@ export const LENGTH_DICTIONARY: DictScale[] = [
         label: "芝麻",
         sizeM: 0.002,
         sizeText: "约 2 毫米",
-        hook: "10 粒排一排刚好 1 厘米",
+        hook: "按每粒约 2 毫米估算，10 粒约 2 厘米",
       },
       {
         catalogId: "rice_grain",
